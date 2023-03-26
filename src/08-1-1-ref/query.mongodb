@@ -1,0 +1,20 @@
+use("platzi_store")
+
+db.stores.findOne()
+db.stores_details.findOne()
+
+// Agregation framework
+// Lookup
+db.stores.aggregate([
+	{
+		$lookup: {
+			from: 'stores_details',
+			localField: 'storeId',
+			foreignField: 'storeId',
+			as: 'detail'
+		}
+	},
+	{
+		$unwind: '$detail'
+	}
+])
