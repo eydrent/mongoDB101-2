@@ -3,7 +3,7 @@ use("platzi_store")
 db.stores.findOne()
 db.stores_details.findOne()
 
-// Agregation framework
+// Aggregation framework
 // Lookup
 db.stores.aggregate([
 	{
