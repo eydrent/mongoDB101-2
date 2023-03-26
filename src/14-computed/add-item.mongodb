@@ -1,0 +1,36 @@
+// order
+// 642093bb9f2923261b55b1f8
+
+// use("platzi_store")
+// db.orders.updateOne({
+//   _id: ObjectId("642093bb9f2923261b55b1f8")
+// }, {
+//   $push: {
+//     items: {
+//       name: 'Product 1',
+//       price: 12,
+//       qty: 1,
+//       product_id: ObjectId('64207645ba47b95a566a7bb8')
+//     }
+//   },
+//   $inc: {
+//     total: 12 * 1
+//   }
+// })
+
+use("platzi_store")
+db.orders.updateOne({
+  _id: ObjectId("642093bb9f2923261b55b1f8")
+}, {
+  $push: {
+    items: {
+      name: 'Product 2',
+      price: 45,
+      qty: 3,
+      product_id: ObjectId('64207645ba47b95a566a7bb9')
+    }
+  },
+  $inc: {
+    total: 45 * 3
+  }
+})
