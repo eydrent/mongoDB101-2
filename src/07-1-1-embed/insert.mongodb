@@ -1,0 +1,22 @@
+use("platzi_store")
+
+db.users.insertOne({
+  name: "Eydrent",
+  last_name: "AvenFor",
+  email: "info@avenfor.com",
+  password: "eydrenT7",
+  role: "seller",
+  age: 19,
+  isSingle: true,
+  social_accounts: ['Twitter', 'Facebook'],
+  address: {
+    street: "CR 1 # 33",
+    city: "Bogota",
+    zip: "11011"
+  },
+  shipping_address: {
+    street: "CL 1 # 35",
+    city: "Bogota",
+    zip: "11011"
+  },
+})
