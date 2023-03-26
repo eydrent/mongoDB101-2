@@ -1,0 +1,24 @@
+use("platzi_store")
+
+db.products.find()
+// Product 1
+// 64207645ba47b95a566a7bb8
+
+db.stores.find()
+// Store 2
+// 6420776551c1268d5c47492f
+
+db.products.find()
+
+// With the agregation framework
+// We make the consult
+db.products.aggregate([
+    {
+        $lookup: {
+            from: "stores",
+            localField: "stores_ids",
+            foreignField: "_id",
+            as: "stores"
+        }
+    }
+])
