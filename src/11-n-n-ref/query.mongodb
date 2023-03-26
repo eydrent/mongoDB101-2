@@ -1,0 +1,17 @@
+use("platzi_store")
+
+db.products.find()
+db.stores.find()
+
+// With the agregation framework
+// We make the consult
+db.stores.aggregate([
+    {
+        $lookup: {
+            from: "products",
+            localField: "products_ids",
+            foreignField: "_id",
+            as: "products"
+        }
+    }
+])
