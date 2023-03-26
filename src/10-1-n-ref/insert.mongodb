@@ -1,0 +1,28 @@
+use("platzi_store")
+
+// db.users.insertOne({
+//   name: "Naruto",
+//   last_name: "AvenFor",
+//   email: "info@avenfor.com",
+//   password: "eydrenT7",
+//   role: "seller",
+//   age: 19,
+//   isSingle: true
+// })
+
+db.orders.insertOne({
+  user_id: ObjectId("642070926c921288530c3209"),
+  date: "2020-12-12",
+  items: [
+    {
+      name: 'Zapatos',
+      price: 120,
+      qty: 1
+    },
+    {
+      name: 'Otra cosa',
+      price: 90,
+      qty: 1
+    }
+  ]
+})
